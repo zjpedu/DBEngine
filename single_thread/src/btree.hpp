@@ -8,6 +8,8 @@
 #include <string.h>
 #include <unistd.h>
 #include <vector>
+#include <glog/logging.h>  // yum install glog glog-devel
+#include <gflags/gflags.h> // yum install gflags gflags-devel
 
 #define PAGESIZE 512
 using entry_key_t = int64_t;
@@ -806,6 +808,7 @@ void btree::setNewRoot(char *new_root)
 
 char *btree::btree_search(entry_key_t key)
 {
+  LOG(INFO) << "b plus tree started point search!" << endl;
   page *p = (page *)root;
 
   while (p->hdr.leftmost_ptr != nullptr)
@@ -835,6 +838,7 @@ char *btree::btree_search(entry_key_t key)
 // insert the key in the leaf node
 void btree::btree_insert(entry_key_t key, char *right)
 {
+  LOG(INFO) << "b plus tree insert the key!" << endl;
   page *p = (page *)root;
 
   while (p->hdr.leftmost_ptr != nullptr)
@@ -867,6 +871,7 @@ void btree::btree_insert_internal(char *left, entry_key_t key, char *right,
 
 void btree::btree_delete(entry_key_t key)
 {
+  LOG(INFO) << "b plus tree delete the key!" << endl;
   page *p = (page *)root;
 
   while (p->hdr.leftmost_ptr != nullptr)
@@ -949,6 +954,7 @@ void btree::btree_delete_internal(entry_key_t key, char *ptr, uint32_t level,
 void btree::btree_search_range(entry_key_t min, entry_key_t max,
                                unsigned long *buf, int &offset)
 {
+  LOG(INFO) << "b plus started range search!" << endl;
   page *p = (page *)root;
 
   while (p)
