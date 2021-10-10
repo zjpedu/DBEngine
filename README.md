@@ -48,9 +48,49 @@ b >= =10 && b <= 50 && a == 1000 || a == 2000 || a == 3000
 ### Multi-Threads Implementation
 
 * It uses `atomic_flag` to implement the `spin lock`, which is the best performance. Because the  `atomic_flag` is lock-free.
-* The `PAGE_SIZE` is greater than 64 beacuse of memory align.
 
-**Note: It exists  bug!**
+```shell
+cd multi_thread
+make
+./task
+```
+
+示例输入：
+```shell
+# main thread
+Row rows[] = {{1000, 20}, {1000, 31}, {500, 75}, {2000, 31}, {2000, 16}, {4500, 50}};
+
+// other threads
+Row rows1[] = {{1000, 20}, {1000, 31}, {500, 75}, {2000, 31}, {2000, 16}, {4500, 50}};
+Row rows2[] = {{1000, 20}, {1000, 31}, {500, 75}, {2000, 31}, {2000, 16}, {4500, 50}};
+Row rows3[] = {{1000, 20}, {1000, 31}, {500, 75}, {2000, 31}, {2000, 16}, {4500, 50}};
+```
+
+过滤条件：
+
+```shell
+b >= =10 && b <= 50 && a == 1000 || a == 2000 || a == 3000
+```
+
+示例输出：
+```shell
+2000 16
+2000 16
+2000 16
+2000 16
+1000 20
+1000 20
+1000 20
+1000 20
+1000 31
+2000 31
+1000 31
+2000 31
+1000 31
+2000 31
+2000 31
+1000 31
+```
 
 ### Experiments
 
