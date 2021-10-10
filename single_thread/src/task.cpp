@@ -32,6 +32,7 @@ void task(Row *rows, int nrows)
             printf("%d %d\n", tmp.a, tmp.b);
     }
     delete[] bufs;
+    delete bt;
 }
 
 int main(int argc, char *argv[])
@@ -39,8 +40,8 @@ int main(int argc, char *argv[])
     google::InitGoogleLogging(argv[0]);
     FLAGS_colorlogtostderr=true;  //set output color
     FLAGS_log_dir = "./logs";  // create the directory by myself
-
     LOG(INFO) << "The main started!" << endl;
+    
     Row rows[] = {{1000, 20}, {1000, 31}, {500, 75}, {2000, 31}, {2000, 16}, {4500, 50}};
     int len = sizeof(rows) / sizeof(rows[0]);
     task(rows, len);
