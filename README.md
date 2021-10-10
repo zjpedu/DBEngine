@@ -43,6 +43,6 @@ b >= =10 && b <= 50 && a == 1000 || a == 2000 || a == 3000
 
 Page Size (512 Bytes) = Header (32 Bytes) + Entry_Size (16 Bytes) * Entry_Num (30)
 
-### Lock-free Multi-Thread Implementation
+### Multi-Threads Implementation
 
 To Do ...
