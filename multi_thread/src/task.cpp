@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
 {
     google::InitGoogleLogging(argv[0]);
     FLAGS_colorlogtostderr=true;  //set output color
-    FLAGS_log_dir = "./logs";  // create the directory by myself
+    FLAGS_log_dir = "./logs";  // the logs directory
     LOG(INFO) << "The main started!" << endl;
 
     // int proc;
