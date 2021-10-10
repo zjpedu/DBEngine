@@ -4,6 +4,8 @@ Implementing the `select ... from ... where ...` clause.
 
 ### Install Dependencies
 
+It dependents glog, gflags, gtest. As follows:
+
 ```shell
 yum install glog glog-devel
 yum install gflags gflags-devel
@@ -41,8 +43,13 @@ b >= =10 && b <= 50 && a == 1000 || a == 2000 || a == 3000
 
 ### B+ Tree Implementation
 
-Page Size (512 Bytes) = Header (32 Bytes) + Entry_Size (16 Bytes) * Entry_Num (30)
+* Page Size (512 Bytes) = Header (32 Bytes) + Entry_Size (16 Bytes) * Entry_Num (30)
 
 ### Multi-Threads Implementation
 
+* It uses `atomic_flag` to implement the `spin lock`, which is the best performance. Because the  `atomic_flag` is lock-free.
+
+### Experiments
+
 To Do ...
+
