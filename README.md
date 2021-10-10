@@ -14,7 +14,6 @@ yum install gtest gtest-devel
 
 ```shell
 cd single_thread
-mkdir ./logs # create glog directory
 make
 ./task
 ```
