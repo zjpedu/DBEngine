@@ -1,9 +1,20 @@
 ## DBDemo
 
+Implementing the `select ... from ... where ...` clause.
+
+### Install Dependencies
+
+```shell
+yum install glog glog-devel
+yum install gflags gflags-devel
+yum install gtest gtest-devel
+```
+
 ### Single Thread Implementation
 
 ```shell
 cd single_thread
+mkdir ./logs # create glog directory
 make
 ./task
 ```
