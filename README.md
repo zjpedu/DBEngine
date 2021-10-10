@@ -4,7 +4,8 @@ Implementing the `select ... from ... where ...` clause.
 
 ### Install Dependencies
 
-It dependents glog, gflags, gtest. As follows:
+
+In centos 7, it dependents glog, gflags, gtest. As follows:
 
 ```shell
 yum install glog glog-devel
