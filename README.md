@@ -50,7 +50,7 @@ b >= =10 && b <= 50 && a == 1000 || a == 2000 || a == 3000
 
 ### Multi-Threads Implementation
 
-* It uses `atomic_flag` to implement the `spin lock`, which is the best performance. Because the  `atomic_flag` is lock-free.
+* It uses `atomic_flag` to implement the `spin lock`, which has the best performance. Because the  `atomic_flag` is lock-free.
 
 ```shell
 cd multi_thread
