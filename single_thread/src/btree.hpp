@@ -8,8 +8,8 @@
 #include <string.h>
 #include <unistd.h>
 #include <vector>
-#include <glog/logging.h>  // yum install glog glog-devel
-#include <gflags/gflags.h> // yum install gflags gflags-devel
+#include <glog/logging.h> 
+#include <gflags/gflags.h>
 
 #define PAGESIZE 512
 using entry_key_t = int64_t;
