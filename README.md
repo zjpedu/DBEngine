@@ -1,4 +1,7 @@
 ## DBDemo
+![Github stars](https://img.shields.io/github/stars/Ethanzjp/DBDemo.svg) 
+![](https://img.shields.io/github/license/Ethanzjp/DBDemo.svg) 
+![Github stars](https://img.shields.io/github/forks/Ethanzjp/DBDemo.svg)
 
 Implementing the `select ... from ... where ...` clause.
 
