@@ -32,8 +32,6 @@ public:
   }
 };
 
-spinlock *print_lock = new spinlock();
-
 class btree
 {
 private:
