@@ -102,5 +102,7 @@ b >= =10 && b <= 50 && a == 1000 || a == 2000 || a == 3000
 * Unit tests and Integration Testing using the `gtest` tool.
 * Consistent and failure recovery using logging.
 * Latch free multiple threads implementation.
+* Implementing the binary search on lefe node using double B-link tree
+* Implementing out-of-core B+tree using the B+-tree buffer and page table
 * ...
 
