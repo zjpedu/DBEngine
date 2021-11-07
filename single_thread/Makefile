@@ -16,4 +16,4 @@ main: ./src/task.cpp
 	g++ $(CFLAGS) -o task ./src/task.cpp $(LIBS)
 
 clean: 
-	rm $(output)
+	rm -rf $(output) input *.dSYM
