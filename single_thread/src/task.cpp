@@ -1,4 +1,5 @@
 #include "btree.hpp"
+#include "generateData.hpp"
 #include <glog/logging.h>  // yum install glog glog-devel
 #include <gflags/gflags.h> // yum install gflags gflags-devel
 
@@ -35,14 +36,28 @@ void task(Row *rows, int nrows)
     delete bt;
 }
 
+
 int main(int argc, char *argv[])
 {
     google::InitGoogleLogging(argv[0]);
     FLAGS_colorlogtostderr=true;  //set output color
     FLAGS_log_dir = "./logs";  // the logs directory
     LOG(INFO) << "The main started!" << endl;
+   
+    // 从文件读取大量数据，并保存到 row 数组中
+    int num_ways = 10;
+    int run_size = 1000;
+    Row rows[num_ways*run_size];
+    generateData(num_ways, run_size);
+
+    char input_file[] = "input.txt";
+    FILE *in = openFile(input_file, "r");
+    for(int i = 0 ; i < num_ways * run_size; i++){
+        if(fscanf(in, "%d,%d", &rows[i].a, &rows[i].b) != 2){
+            break;
+	}
+    }
     
-    Row rows[] = {{1000, 20}, {1000, 31}, {500, 75}, {2000, 31}, {2000, 16}, {4500, 50}};
     int len = sizeof(rows) / sizeof(rows[0]);
     task(rows, len);
     return 0;
