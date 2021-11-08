@@ -1,6 +1,6 @@
-## DBDemo
-![Github stars](https://img.shields.io/github/stars/Ethanzjp/DBDemo.svg) 
-![Github stars](https://img.shields.io/github/forks/Ethanzjp/DBDemo.svg)
+## DBEngine
+![Github stars](https://img.shields.io/github/stars/Ethanzjp/DBEngine.svg) 
+![Github stars](https://img.shields.io/github/forks/Ethanzjp/DBEngine.svg)
 
 Implementing the `select ... from ... where ...` clause.
 
